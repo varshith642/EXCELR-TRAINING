@@ -1,6 +1,7 @@
 import java.util.Scanner;
 class demo007{
     public static void main(String[] args) {
+        
         Scanner scanner= new Scanner(System.in);
         System.out.println("Your Name:");
         String name=scanner.next();
