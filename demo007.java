@@ -1,16 +1,17 @@
 import java.util.Scanner;
-class demo007{
+public class demo007{
     public static void main(String[] args) {
-        
+        String name;
+        int age;
+        long phno;
+
         Scanner scanner= new Scanner(System.in);
         System.out.println("Your Name:");
-        String name=scanner.next();
+        name=scanner.nextLine();
         System.out.println("Your age:");
-        String age=scanner.next();
+        age=scanner.nextInt();
         System.out.println("Your phno:");
-        String phno=scanner.next();
-        System.out.println("Welcome "+name);
-        System.out.println("the age of "+name+ " is "+age);
-        System.out.println("the contact number of " +name+ " is "+phno);
+        phno=scanner.nextLong();
+        System.out.println("hello "+name +" ,your age is "+ age+ " ,your phone no is "+phno);
     }
 }
