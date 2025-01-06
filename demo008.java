@@ -31,7 +31,7 @@ public class demo008{
             un=scanner.next();
             System.out.println("Enter the password:");
             pd=scanner.next();
-            if(un.equals("Mounika") && pd.equals("mounika")){
+            if(un.equals("Varshith") && pd.equals("varshith")){
                 System.out.println("You are Welcome");
                 break;
             }else{
