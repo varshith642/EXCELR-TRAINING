@@ -1,70 +1,50 @@
-class PS003 {
-    String name;
-    int wickets;
-    int matches;
-    int balls_bowled;
-    int runs_conceded;
-
-    // Default constructor
-    public PS003() {
-        this.name = "Unknown";
-        this.wickets = 0;
-        this.matches = 0;
-        this.balls_bowled = 0;
-        this.runs_conceded = 0;
-    }
-
-    // Parameterized constructor
-    public PS003(String name, int wickets, int matches, int balls_bowled, int runs_conceded) {
-        this.name = name;
-        this.wickets = wickets;
-        this.matches = matches;
-        this.balls_bowled = balls_bowled;
-        this.runs_conceded = runs_conceded;
-    }
-
-    // Method to compute bowling average
-    public void computeBowlingAverage() {
-        if (wickets < 0 || matches < 0 || balls_bowled < 0 || runs_conceded < 0 || (matches == 0 && (runs_conceded > 0 || balls_bowled > 0))) {
+import java.util.Scanner;
+class Bowler{
+        Scanner scanner=new Scanner(System.in);
+        String name;
+        int wickets,matches,balls_bowled,runs_conceded;
+    public bowler(){
+        System.out.println("Enter the name of the bowler: ");
+        this.name= scanner.next();
+        System.out.println("Enter the no of wickets: ");
+        this.wickets=scanner.nextInt();
+        System.out.println("Enter the no of matches: ");
+        this.matches=scanner.nextInt();
+        System.out.println("Enter the no of balls bowled: ");
+        this.balls_bowled = scanner.nextInt();
+        System.out.println("Enter the no of runs conceded: ");
+        this.runs_conceded=scanner.nextInt();
+        if((this.wickets|this.matches|this.balls_bowled|this.runs_conceded)<=0){
             System.out.println("Error");
-        } else {
-            double bowling_avg = (double) runs_conceded / wickets;
-            System.out.println("Name: " + name);
-            System.out.println("bowling_avg=" + bowling_avg);
         }
+    } 
+    public Bowler(String name,int wickets,int matches,int balls_bowled,int runs_conceded){
+        this.name=name;
+        this.wickets=wickets;
+        this.matches=matches;
+        this.balls_bowled=balls_bowled;
+this.runs_conceded=runs_conceded;
     }
-
-    // Method to show statistics
-    public void showStatistics() {
-        if (wickets < 0 || matches < 0 || balls_bowled < 0 || runs_conceded < 0 || (matches == 0 && (runs_conceded > 0 || balls_bowled > 0))) {
-            System.out.println("Error");
-        } else {
-            System.out.println("Name=" + name);
-            System.out.println("wickets=" + wickets);
-            System.out.println("matches=" + matches);
-            System.out.println("balls_bowled=" + balls_bowled);
-            System.out.println("runs_conceded=" + runs_conceded);
-        }
+    void computeBowlingAverage(){
+        double avg= (double)this.runs_conceded/this.wickets;
+        System.out.println("computeBowlingAverage: "+avg);
     }
-
-    // Method to compute strike rate
-    public void computeStrikeRate() {
-        if (wickets < 0 || matches < 0 || balls_bowled < 0 || runs_conceded < 0 || (matches == 0 && (runs_conceded > 0 || balls_bowled > 0))) {
-            System.out.println("Error");
-        } else {
-            double strike_rate = (double) runs_conceded / balls_bowled;
-            System.out.println("Name: " + name);
-            System.out.println("Strike_rate=" + strike_rate);
-        }
+    void showStatistics(){
+        System.out.println("Name: "+this.name);
+        System.out.println("wickets: "+this.wickets);
+        System.out.println("matches: "+this.matches);
+        System.out.println("balls_bowled: "+this.balls_bowled);
+        System.out.println("runs_conceded: "+this.runs_conceded);
     }
-
-    public static void main(String[] args) {
-        // Create object of bowler with input values
-        PS003 sachin = new PS003("Sachin", 10, 5, 750, 463);
-        
-        // Call the Bowler class methods
-        sachin.computeBowlingAverage();
-        sachin.showStatistics();
-        sachin.computeStrikeRate();
+    void computeStrikeRate(){
+        double strike= (double)this.runs_conceded/this.balls_bowled;
+        System.out.println("Strike_rate= "+strike);
     }
+public static void main(String[] args) {
+    Bowler bowler=new Bowler();
+    System.out.println("Name: "+bowler.name);
+    Bowler.computeBowlingAverage();
+    Bowler.showStatistics();
+    Bowler.computeStrikeRate();
 }
+}  
