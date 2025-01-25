@@ -1,4 +1,4 @@
-public class demo003 {
+public class Demo003 {
 
     public static void main(String[] args) {
         // Declare and initialize three numbers
