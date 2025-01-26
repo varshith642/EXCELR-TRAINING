@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class demo009{
+public class Demo009{
         Scanner scanner= new Scanner(System.in);
         String customername(){
             System.out.println("Enter the name:");
